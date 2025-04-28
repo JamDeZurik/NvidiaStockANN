@@ -9,6 +9,7 @@ from torch.utils.data import Dataset, DataLoader
 # NVIDIA Stock Data
 # https://www.kaggle.com/datasets/meharshanali/nvidia-stocks-data-2025
 df = pd.read_csv("NVDA.csv")
+df = df.tail(2000) # only use last 2000 rows as they are most recent and data is skewed left
 
 class NvidiaData(Dataset):
     def __init__(self):
